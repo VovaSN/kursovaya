@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Забронируй отель в Азербайджане</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link href="img/favicon.jpg" rel="icon">
+</head>
+<body>
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+          <a class="navbar-brand" href="#"><i>AZ</i> Booking</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto py-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Домой</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">О нас</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Подробная информация
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Контакты</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Партнеры</a></li>
+                </ul>
+              </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+   </header>
+   <section class="hero">
+    <div class="hero-content">
+        <h1>Бронируйте отели для отдыха по Азербайджану</h1>
+        <p>Дома, отели и многое другое.</p>
+    </div>
+
+    <form class="search-bar" onsubmit="return checkPrices(event)">
+        <input type="text" id="city" placeholder="Город, например Баку" required>
+        
+        <div id="checkin" class="input-group date">
+       <input required class="form-control" type="text" placeholder="Заезд" style="border-radius: 5px;"/>
+       <span class="input-group-addon">
+           <i class="bi bi-calendar"></i>
+       </span>
+   </div>
+
+    <div id="checkout" class="input-group date">
+      <input required class="form-control" type="text" placeholder="Выезд" style="border-radius: 5px;"/>
+      <span class="input-group-addon">
+        <i class="bi bi-calendar"></i>
+      </span>
+  </div>
+        <select id="guests">
+            <option>1 взрослый</option>
+            <option>1 взрослый, 1 ребенок</option>
+            <option>2 взрослых</option>
+            <option>2 взрослых, 1 ребенок</option>
+            <option>2 взрослых, 2 ребенка</option>
+            <option>2 взрослых, 3 ребенка</option>
+            <option>3 взрослых, 1 ребенок</option>
+            <option>3 взрослых, 2 ребенка</option>
+            <option>3 взрослых, 3 ребенка</option>
+          </select>
+          <button type="submit" class="btn btn-success btn-lg" style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1.15rem; --bs-btn-border-radius: 5px">Проверить цены</button>
+    </form>
+   </section>
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   <script src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.ru.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+   <script src="js/script.js"></script>
+</body>
+</html>
