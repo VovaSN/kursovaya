@@ -120,9 +120,10 @@ $(document).ready(function () {
     autoclose: true,
   }).on('changeDate', function (e) {
     const checkinDate = e.date;
-
     // Обновляем минимальную дату для выезда
-    $('#checkout').datepicker('setStartDate', checkinDate);
+    const minCheckoutDate = new Date(checkinDate);
+    minCheckoutDate.setDate(minCheckoutDate.getDate() + 1);
+    $('#checkout').datepicker('setStartDate', minCheckoutDate);
 
     const checkoutInput = $('#checkout input');
     const currentCheckoutDate = $('#checkout').datepicker('getDate');
@@ -134,12 +135,14 @@ $(document).ready(function () {
       $('#checkout').datepicker('setDate', newCheckout);
     }
   });
-
-  // Инициализация "Выезда"
+ // Инициализация "Выезда" с начальной датой = сегодня +1 день
+  const initialCheckoutDate = new Date(today);
+  initialCheckoutDate.setDate(initialCheckoutDate.getDate() + 1);
+  
   $('#checkout').datepicker({
     format: 'dd.mm.yyyy',
     language: 'ru',
-    startDate: today,
+    startDate: initialCheckoutDate,
     endDate: maxDate,
     autoclose: true,
   });
