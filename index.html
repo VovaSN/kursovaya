@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Забронируй отель в Азербайджане</title>
+    <link rel="stylesheet" href="/css/style.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="/css/style.css"/>
     <link href="img/favicon.jpg" rel="icon">
 </head>
 <body>
    <header>
+    <!--Начало навбара-->
     <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container">
-          <a class="navbar-brand" href="#"><i>AZ</i> Booking</a>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><i>AZ</i> Booking</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto py-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Домой</a>
+                <a class="nav-link" aria-current="page" href="index.html">Главная</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">О нас</a>
@@ -32,6 +33,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Контакты</a></li>
                   <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Отзывы</a></li>
                   <li><a class="dropdown-item" href="#">Партнеры</a></li>
                 </ul>
               </li>
@@ -40,43 +42,142 @@
           </div>
         </div>
       </nav>
+      <!--Конец навбара-->
    </header>
+   <div class="container-fluid position-relative p-0">
    <section class="hero">
     <div class="hero-content">
         <h1>Бронируйте отели для отдыха по Азербайджану</h1>
-        <p>Дома, отели и многое другое.</p>
+        <h4>Дома, отели и многое другое.</h4>
     </div>
-
     <form class="search-bar" onsubmit="return checkPrices(event)">
-        <input type="text" id="city" placeholder="Город, например Баку" required>
-        
+      <div class="city-input-container" style="min-height: 30px;">
+        <input type="text" id="city" placeholder="Город, например Баку" required style="min-width: 150px;max-width: 200px;">
+        <div class="city-dropdown">
+          <ul class="city">
+            <li data-f="baku">Баку</li>
+            <li data-f="gabala">Габала</li>
+            <li data-f="gusar">Гусар</li>
+            <li data-f="ganja">Гянджа</li>
+            <li data-f="shahdag">Шахдаг</li>
+            <li data-f="sheki">Шеки</li>
+          </ul>
+        </div>
+      </div>
         <div id="checkin" class="input-group date">
        <input required class="form-control" type="text" placeholder="Заезд" style="border-radius: 5px;"/>
        <span class="input-group-addon">
            <i class="bi bi-calendar"></i>
        </span>
    </div>
-
     <div id="checkout" class="input-group date">
       <input required class="form-control" type="text" placeholder="Выезд" style="border-radius: 5px;"/>
       <span class="input-group-addon">
         <i class="bi bi-calendar"></i>
       </span>
   </div>
-        <select id="guests">
-            <option>1 взрослый</option>
-            <option>1 взрослый, 1 ребенок</option>
-            <option>2 взрослых</option>
-            <option>2 взрослых, 1 ребенок</option>
-            <option>2 взрослых, 2 ребенка</option>
-            <option>2 взрослых, 3 ребенка</option>
-            <option>3 взрослых, 1 ребенок</option>
-            <option>3 взрослых, 2 ребенка</option>
-            <option>3 взрослых, 3 ребенка</option>
+        <select id="guests" style="max-width: 170px;">
+            <option>1 гость</option>
+            <option>2 гостя</option>
+            <option>3 гостя</option>
+            <option>4 гостя</option>
+            <option>5+ гостей</option>
           </select>
-          <button type="submit" class="btn btn-success btn-lg" style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1.15rem; --bs-btn-border-radius: 5px">Проверить цены</button>
+          <button type="submit" class="btn btn-success btn-lg" style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 1.15rem; --bs-btn-border-radius: 5px;">Проверить цены</button>
     </form>
    </section>
+  </div>
+   <div class="container py-2">
+      <h2 class="text-center mb-3">Популярные регионы Азербайджана</h2>
+      <div class="destination-slider">
+        <button class="slider-control prev" type="button" data-bs-target="#destinationsCarousel" data-bs-slide="prev">
+            &lt;
+        </button>
+        <!--Начало слайдера-->
+        <div id="destinationsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Первый слайд(3 элемента) -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 destination-slide">
+                            <div class="destination-card">   
+                              <a href="search.html#baku">
+                                <div class="destination-img" style="background-image: url('img/cities/baku.jpg');"></div></a>
+                                <div class="destination-info">
+                                    <div class="destination-title"><a href="search.html#baku">Баку</a></div>
+                                    <div class="destination-count">3 варианта размещения</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4 destination-slide">
+                            <div class="destination-card">
+                              <a href="search.html#shahdag">
+                                <div class="destination-img" style="background-image: url('img/cities/shahdag.jpg');"></div></a>
+                                <div class="destination-info">
+                                    <div class="destination-title"><a href="search.html#shahdag">Шахдаг</a></div>
+                                    <div class="destination-count">1 вариант размещения</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 destination-slide">
+                            <div class="destination-card">
+                              <a href="search.html#gusar">
+                                <div class="destination-img" style="background-image: url('/img/cities/gusar.jpg');"></div></a>
+                                <div class="destination-info">
+                                    <div class="destination-title"><a href="search.html#gusar">Гусар</a></div>
+                                    <div class="destination-count">1 вариант размещения</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Второй слайд (3 элемента) -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 destination-slide">
+                            <div class="destination-card">
+                              <a href="search.html#gabala">
+                                <div class="destination-img" style="background-image: url('img/cities/qabala.jpg');"></div></a>
+                                <div class="destination-info">
+                                    <div class="destination-title"><a href="search.html#gabala">Габала</a></div>
+                                    <div class="destination-count">2 варианта размещения</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 destination-slide">
+                            <div class="destination-card">
+                              <a href="search.html#sheki">
+                                <div class="destination-img" style="background-image: url('img/cities/sheki.jpg');"></div></a>
+                                <div class="destination-info">
+                                    <div class="destination-title"><a href="search.html#sheki">Шеки</a></div>
+                                    <div class="destination-count">2 варианта размещения</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 destination-slide">
+                            <div class="destination-card">
+                              <a href="search.html#ganja">
+                                <div class="destination-img" style="background-image: url('img/cities/ganja.jpg');"></div></a>
+                                <div class="destination-info">
+                                    <div class="destination-title"><a href="search.html#ganja">Гянджа</a></div>
+                                    <div class="destination-count">2 варианта размещения</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <button class="slider-control next" type="button" data-bs-target="#destinationsCarousel" data-bs-slide="next">
+            &gt;
+        </button>
+    </div>
+   </div>
+   <!--Конец слайдера-->
+
    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
    <script src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.ru.min.js"></script>
