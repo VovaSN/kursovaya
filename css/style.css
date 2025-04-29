@@ -36,7 +36,7 @@ header{
       justify-content: center;
     }
 .hero{
-    background: url('/img/logo.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(41, 41, 53, 0.7), rgba(29, 29, 38, 0.7)),url('../img/logo.jpg') center/cover no-repeat;
     padding: 150px 20px;
     color: white;
     position: relative;
@@ -49,6 +49,12 @@ header{
 .hero-content h1,
 .hero-content h4{
   text-shadow: 1px 1px 2px black;
+}
+.breadcrumb-item a{
+  text-decoration: none;
+  font-weight: bold; 
+  font-size:24px;
+  color:white;
 }
 /*Search bar*/
 .search-bar {
@@ -190,6 +196,50 @@ header{
   border-radius: 50%;
   margin: 0 5px;
 }
+.card-img{
+    height: 160px;
+}
+.row .card{
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.container.justify-content-center {
+  padding-left: 15px; 
+  padding-right: 15px;
+  margin-top: 20px;
+  max-width: 1200px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+.row .card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+/*Сезонное предложение*/
+.season-hotels-card {
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.season-hotels-card {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.price-old {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+.price-new {
+  color: #dc3545;
+  font-weight: bold;
+}
+.season-offer {
+  background-color: #f8f9fa;
+  border-left: 4px solid #28a745;
+  padding: 15px;
+  margin-bottom: 20px;
+}
 /*Фильтр*/
 .filter-container {
   background: white;
@@ -298,6 +348,39 @@ header{
 .hotel-feature b {
   margin-right: 10px;
   color: #28a745;
+}
+/*О нас*/
+.icon-box {
+  background-color: #28a745;
+  padding: 20px;
+  border-radius: 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-box img {
+  width: 30px;
+  height: 30px;
+}
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3f684d;
+}
+.highlight {
+  font-weight: bold;
+}
+/*Отзывы*/
+.star-rating p {
+  font-size: 1.5rem;
+  color: #ccc;
+  cursor: pointer;
+  display: inline-block;
+}
+.star-rating p.active {
+  color: gold;
 }
 /*Style for mobile phone*/
   @media (max-width: 768px) {

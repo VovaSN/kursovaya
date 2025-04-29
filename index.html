@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AzBooking: Закажи отель по самой выгодной цене</title>
-    <link rel="stylesheet" href="/css/style.css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-    <link href="img/favicon.jpg" rel="icon">
+    <link href="img/favicon.png" rel="icon">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
    <header>
-    <!--Начало навбара-->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html"><i>AZ</i> Booking</a>
@@ -31,10 +30,9 @@
                   Подробная информация
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Контакты</a></li>
+                  <li><a class="dropdown-item" href="contact.html">Контакты</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Отзывы</a></li>
-                  <li><a class="dropdown-item" href="#">Партнеры</a></li>
+                  <li><a class="dropdown-item" href="reviews.html">Отзывы</a></li>
                 </ul>
               </li>
               </li>
@@ -42,8 +40,8 @@
           </div>
         </div>
       </nav>
-      <!--Конец навбара-->
    </header>
+   <!--Конец навбара-->
    <div class="container-fluid position-relative p-0">
    <section class="hero">
     <div class="hero-content">
@@ -123,7 +121,7 @@
                         <div class="col-xs-6 col-sm-4 destination-slide">
                             <div class="destination-card">
                               <a href="search.html#gusar">
-                                <div class="destination-img" style="background-image: url('/img/cities/gusar.jpg');"></div></a>
+                                <div class="destination-img" style="background-image: url('img/cities/gusar.jpg');"></div></a>
                                 <div class="destination-info">
                                     <div class="destination-title"><a href="search.html#gusar">Гусар</a></div>
                                     <div class="destination-count">1 вариант размещения</div>
@@ -178,6 +176,162 @@
    </div>
    <!--Конец слайдера-->
 
+   <!--Интересные варианты-->
+  <div class="container justify-content-center" style="margin-top: 20px;">
+      <div class="row">
+        <h2 class="text-center mb-3">Вам могут быть интересны эти варианты</h2>
+        <div class="col-xs-6 col-sm-4">
+          <div class="card">
+            <img src="img/hotels/BakuMarriot.jpg" class="card-img" alt="BakuMarriot">
+            <div class="card-body">
+              <h5 class="card-title">Marriott Hotel</h5>
+              <p class="card-text">Marriott Hotel располагается в городе Баку в 5 минутах ходьбы от побережья Каспийского моря. </p>
+              <a class="btn btn-success" href="search.html#baku" role="button">Перейти к отелю</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-4">
+          <div class="card">
+            <img src="img/hotels/BakuFourSeasons.jpg" class="card-img" alt="FourSeasons">
+            <div class="card-body">
+              <h5 class="card-title">Four Seasons Hotel Baku</h5>
+              <p class="card-text">Из этого 5-звездочного отеля открывается вид на Каспийское море и Старый город Баку с дворцом Ширваншахов.</p>
+              <a class="btn btn-success" href="search.html#baku" role="button">Перейти к отелю</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-4">
+          <div class="card">
+            <img src="img/hotels/ShahdagPikPalace.jpg" class="card-img" alt="PikPalace">
+            <div class="card-body">
+              <h5 class="card-title">Pik Palace</h5>
+              <p class="card-text">Отель Pik Palace расположен на курорте Шахдаг. В распоряжении гостей оздоровительный спа-центр, сауна, хаммам, фитнес-клуб и гидромассажная ванна.</p>
+              <a class="btn btn-success" href="search.html#shahdag" role="button">Перейти к отелю</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<!--Сезонное предложение-->
+<div class="container justify-content-center" style="margin-top: 20px;">
+  <div class="row">
+    <h1 class="display-4 text-center">Предложения на выходные</h1>
+      <p class="lead text-muted text-center">Сэкономьте на жилье на этих выходных</p>
+
+      <!--Отель 1-->
+    <div class="col-xs-6 col-sm-4">
+      <div class="card">
+        <img src="img/hotels/GanjaDeluxe.jpg" class="card-img" alt="DeluxeHotelGanja">
+        <div class="card-body">
+          <h5 class="card-title">Deluxe Hotel Ganja</h5>
+          <p class="card-text text-muted">Гянджа</p>
+          <div class="season-offer w-100">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="price-old">AZN 150</div>
+                    <div class="price-new ms-5">AZN 100</div>
+                </div>
+                <a class="btn btn-success" href="search.html#ganja" role="button">Показать подробнее</a>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Отель 2-->
+    <div class="col-xs-6 col-sm-4">
+      <div class="card">
+        <img src="img/hotels/GabalaNohur.jpg" class="card-img" alt="NohurHotelGabala">
+        <div class="card-body">
+          <h5 class="card-title">Nohur Hotel Gabala</h5>
+          <p class="card-text text-muted">Габала</p>
+          <div class="season-offer w-100">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="price-old">AZN 200</div>
+                    <div class="price-new ms-5">AZN 158</div>
+                </div>
+                <a class="btn btn-success" href="search.html#gabala" role="button">Показать подробнее</a>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+     <!--Отель 3-->
+    <div class="col-xs-6 col-sm-4">
+      <div class="card">
+        <img src="img/hotels/ShekiMarhal.jpg" class="card-img" alt="MarxalResortSheki">
+        <div class="card-body">
+          <h5 class="card-title">Marxal Resort & Spa</h5>
+          <p class="card-text text-muted">Шеки</p>
+          <div class="season-offer w-100">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="price-old">AZN 320</div>
+                    <div class="price-new ms-5">AZN 276</div>
+                </div>
+                <a class="btn btn-success" href="search.html#sheki" role="button">Показать подробнее</a>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+   <!--Начала футера-->
+  <footer class="text-center text-lg-start text-dark mt-auto" style="background-color: #ECEFF1">
+    <section class="d-flex justify-content-between p-4 text-white" style="background-color: #3f684d;">
+    </section>
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold">AzBooking</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #3ac368; height: 2px"
+                />
+            <p>
+              Компания AzBooking, основанная в 2025 году в Азербайджане. 
+              Цель AzBooking, подразделения Vladimir Holdings Inc., — делать путешествия доступными каждому.
+            </p>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold">Полезные ссылки</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #3ac368; height: 2px"
+                />
+            <p>
+              <a href="#" class="text-dark">О нас</a>
+            </p>
+            <p>
+              <a href="contact.html" class="text-dark">Контакты</a>
+            </p>
+            <p>
+              <a href="#" class="text-dark">Отзывы</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold">Контакты</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #3ac368; height: 2px"
+                />
+            <p>Azadliq Avenue 34, Baku, Azerbaijan, AZ1010</p>
+            <p>info@asoiu.edu.az</p>
+            <p>+994 55 123 23 23</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">© 2025 Copyright: <u>Vladimir Serbin</u>, All rights reserved.
+    </div>
+  </footer>
+   <!--Конец футера-->
    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
    <script src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.ru.min.js"></script>
