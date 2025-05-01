@@ -6,7 +6,7 @@ body{
 header{
   background-color: #31543b;
 }
-/*Navbar settings*/
+/*Настройки для навбара*/
 .navbar-brand{
   font-size: 24px;
   font-weight: bold;
@@ -15,32 +15,32 @@ header{
   background-color: #31543b; 
 }
 .navbar-custom .navbar-brand,
-    .navbar-custom .nav-link,
-    .navbar-custom .dropdown-item {
-      color: white;
-      position: relative;
-      margin-right: 30px;
-      padding: 15px 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .navbar-custom .navbar-brand:hover,
-    .navbar-custom .nav-link:hover,
-    .navbar-custom .dropdown-item:hover{
-      color: #3ac368;
-    }
-    .navbar-custom .dropdown-menu {
-      background-color: #3f684d;
-    }
-    .nav-item ul{
-      justify-content: center;
-    }
+.navbar-custom .nav-link,
+.navbar-custom .dropdown-item {
+  color: white;
+  position: relative;
+  margin-right: 30px;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .nav-link:hover,
+.navbar-custom .dropdown-item:hover{
+  color: #3ac368;
+}
+.navbar-custom .dropdown-menu {
+  background-color: #3f684d;
+}
+.nav-item ul{
+  justify-content: center;
+}
 .hero{
-    background: linear-gradient(rgba(41, 41, 53, 0.7), rgba(29, 29, 38, 0.7)),url('../img/logo.jpg') center/cover no-repeat;
-    padding: 150px 20px;
-    color: white;
-    position: relative;
-    text-align: left;
+  background: linear-gradient(rgba(41, 41, 53, 0.7), rgba(29, 29, 38, 0.7)),url('../img/logo.jpg') center/cover no-repeat;
+  padding: 150px 20px;
+  color: white;
+  position: relative;
+  text-align: left;
 }
 .hero-content{
   max-width: 500px;
@@ -56,7 +56,7 @@ header{
   font-size:24px;
   color:white;
 }
-/*Search bar*/
+/*Поиск*/
 .search-bar {
   display: flex;
   flex-wrap: wrap;
@@ -71,8 +71,7 @@ header{
 }
 .search-bar input,
 .search-bar select,
-.search-bar #city,
-.search-bar button {
+.search-bar #city{
   min-width: 150px;
   max-width: 170px;
   padding: 5px 5px; 
@@ -80,26 +79,25 @@ header{
   border: 1px solid #15ff0056;
   border-radius: 5px;
 }
-.search-bar button {
-  flex: 0 1 auto; 
-  min-width: auto; 
-  padding: 8px 12px; 
-  white-space: nowrap; 
-  transition: all 0.3s ease; 
-}
 .search-bar .input-group{
   min-width: 150px; 
   max-width: 170px;
 }
-
-.city li.hide{
-  display:none;
+.search-bar button {
+  font-size: 14px;
+  border: 1px solid #15ff0056;
+  border-radius: 5px;
+  flex: 0 1 auto; 
+  min-width: auto; 
+  max-width: 170px;
+  padding: 8px 12px; 
+  white-space: nowrap; 
 }
+/*Список доступных городов*/
 .city-input-container {
   position: relative;
   display: inline-block;
 }
-
 .city-dropdown {
   display: none;
   position: absolute;
@@ -108,22 +106,20 @@ header{
   min-width: 200px;
   border-radius: 5px;
 }
-
 .city-dropdown ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
 .city-dropdown li {
   padding: 5px 10px;
   cursor: pointer;
   color: #333;
 }
-
 .city-dropdown li:hover {
   background-color: #f0f0f0;
 }
+/*Слайдер популярных регионов*/
 .destination-slider {
   position: relative;
   padding: 0 50px;
@@ -171,11 +167,9 @@ header{
   background: white;
   border: none;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.9;
 }
 .slider-control:hover {
   opacity: 1;
@@ -187,15 +181,7 @@ header{
 .slider-control.next {
   right: 0;
 }
-.carousel-indicators {
-  bottom: -30px;
-}
-.carousel-indicators button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 5px;
-}
+/*Интересные варианты*/
 .card-img{
     height: 160px;
 }
@@ -211,21 +197,11 @@ header{
   margin-left: auto;
   margin-right: auto;
 }
-.row .card:hover{
+.card:hover{
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 /*Сезонное предложение*/
-.season-hotels-card {
-  transition: transform 0.3s;
-  margin-bottom: 20px;
-  position: relative;
-  overflow: hidden;
-}
-.season-hotels-card {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
 .price-old {
   text-decoration: line-through;
   color: #6c757d;
@@ -308,15 +284,10 @@ header{
   border: none;
   font-weight: bold;
   margin-top: 10px;
+  color:black; 
+  font-weight:bold;
 }
-.budget-slider {
-  width: 100%;
-  margin: 15px 0;
-}
-.budget-labels {
-  display: flex;
-  justify-content: space-between;
-}
+/*Отели*/
 .hotel-card {
   background: white;
   border-radius: 8px;
@@ -374,7 +345,7 @@ header{
 }
 /*Отзывы*/
 .star-rating p {
-  font-size: 1.5rem;
+  font-size: 30px;
   color: #ccc;
   cursor: pointer;
   display: inline-block;
@@ -382,7 +353,7 @@ header{
 .star-rating p.active {
   color: gold;
 }
-/*Style for mobile phone*/
+/*Стили для мобильных телефонов*/
   @media (max-width: 768px) {
     .hero {
       padding: 15px 15px;

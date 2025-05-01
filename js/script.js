@@ -1,4 +1,4 @@
-  //Фильтр вводимого текста в city inputi
+  //Фильтр вводимого текста в city input
 if(document.querySelector('#city')){
   document.querySelector('#city').oninput = function() {
     let val = this.value.trim();
@@ -150,6 +150,7 @@ const spanBox = document.querySelectorAll('.filter-type');
 
 let activeFilterClass = 'all';
 if(filterBox){
+//Фильтрация отелей по городам и по цене
   function filterHotels(){
     const hotelPrice = document.querySelectorAll('.hotel-price');
     const minPrice = $("#slider-range").slider("values", 0);
@@ -185,7 +186,7 @@ if(document.querySelector('.filter-section')){
     filterCities(filterClass);
     window.location.hash = filterClass;
   });
-
+//Фильтрация отелей при изменение слайдера цен
   $(function () {
     $("#slider-range").on("slidechange", function () {
       filterHotels();
