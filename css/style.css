@@ -60,12 +60,16 @@ header{
 .search-bar {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1000px;
   gap: 3px;
   background-color: none;
-  padding: 2% 5%;
+  padding: 2% 2%;
   position: absolute;
   bottom: -5px;
   width: 90vw;
+  left: 0;
+  right:0;
 }
 .search-bar input,
 .search-bar select,
