@@ -6,11 +6,11 @@ if(document.querySelector('#city')){
     if(val != ''){
       cities.forEach(function(elem){
         if(elem.innerText.search(val) == -1){
-          elem.classList.add('hide');
+          elem.classList.add('d-none');
           elem.innerHTML = elem.innerText;
       } 
         else{
-          elem.classList.remove('hide');
+          elem.classList.remove('d-none');
           let str = elem.innerText;
           elem.innerHTML = insertMark(str, elem.innerText.search(val), val.length);
         }
@@ -18,7 +18,7 @@ if(document.querySelector('#city')){
     }
     else{
       cities.forEach(function(elem){
-        elem.classList.remove('hide');
+        elem.classList.remove('d-none');
         elem.innerHTML = elem.innerText;
         });
     }
@@ -27,6 +27,31 @@ if(document.querySelector('#city')){
   //Подсветка найденного текста в city input
 function insertMark(str, position, len){
   return str.slice(0,position)+'<mark style="background-color: #93f0ad;">'+str.slice(position, position+len)+'</mark>'+str.slice(position+len);
+}
+
+const cityInput = document.getElementById('city');
+  const cityItems = document.querySelectorAll('.city-dropdown li');
+  
+if(cityItems){
+  cityItems.forEach(item => {
+    item.addEventListener('click', function() {
+      cityInput.value = this.textContent;
+      document.querySelector('.city-dropdown').style.display = 'none';
+    });
+  });
+  if(cityInput){
+// Открыть выпадающий список когда инпут в "фокусе"
+    cityInput.addEventListener('focus', function() {
+      document.querySelector('.city-dropdown').style.display = 'block';
+    });
+
+// Скрыть выпадающий список
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.city-input-container')) {
+        document.querySelector('.city-dropdown').style.display = 'none';
+      }
+    });
+  }
 }
 
 // Скрипт для работы календаря
@@ -70,30 +95,6 @@ if(document.querySelector('#checkin')){
     autoclose: true,
   });
 }
-  const cityInput = document.getElementById('city');
-  const cityItems = document.querySelectorAll('.city-dropdown li');
-  
-if(cityItems){
-  cityItems.forEach(item => {
-    item.addEventListener('click', function() {
-      cityInput.value = this.textContent;
-      document.querySelector('.city-dropdown').style.display = 'none';
-    });
-  });
-  if(cityInput){
-// Открыть выпадающий список когда инпут в "фокусе"
-    cityInput.addEventListener('focus', function() {
-      document.querySelector('.city-dropdown').style.display = 'block';
-    });
-
-// Скрыть выпадающий список
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.city-input-container')) {
-        document.querySelector('.city-dropdown').style.display = 'none';
-      }
-    });
-  }
-}
 function checkPrices(event) {
   event.preventDefault();
   let cities = document.querySelectorAll('.city li');
@@ -128,6 +129,7 @@ function initPriceRangeSlider() {
       range: true,
       min: 40,
       max: 1200,
+      step: 10,
       values: [40, 1200],
       slide: function(event, ui) {
         $("#amount").val(ui.values[0] + " AZN - " + ui.values[1] + " AZN ");
@@ -146,7 +148,7 @@ if(document.querySelector("#slider-range")){
 }
 
 const filterBox = document.querySelectorAll('.hotel-card');
-const spanBox = document.querySelectorAll('.filter-type');
+const filterTypeBox = document.querySelectorAll('.filter-type');
 
 let activeFilterClass = 'all';
 if(filterBox){
@@ -156,7 +158,7 @@ if(filterBox){
     const minPrice = $("#slider-range").slider("values", 0);
     const maxPrice = $("#slider-range").slider("values", 1);
     filterBox.forEach((elem,index)=>{
-      elem.classList.remove('hide');
+      elem.classList.remove('d-none');
 
       const matchCity = elem.classList.contains(activeFilterClass) || activeFilterClass === 'all';
 
@@ -164,13 +166,13 @@ if(filterBox){
       const matchPrice = price >= minPrice && price <= maxPrice;
 
       if(!matchCity || !matchPrice){
-        elem.classList.add('hide');
+        elem.classList.add('d-none');
       }
     });
   }
 
   function filterCities(filterClass){
-    spanBox.forEach(item => item.classList.remove('active'));
+    filterTypeBox.forEach(item => item.classList.remove('active'));
     const active = document.querySelector(`[data-f="${filterClass}"]`);
     if(active) active.classList.add('active');
 
